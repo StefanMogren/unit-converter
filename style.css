@@ -19,6 +19,6 @@
 }
 .flex-container__input {
     font-size: 3rem;
-    width: 150px;
+    max-width: 400px;
     text-align: center;
 }
