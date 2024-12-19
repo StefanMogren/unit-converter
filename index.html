@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>Metric/Imperial Unit Conversion</h1>
-    <input type="number" name="" id="">
+    <main class="wrapper">
+        <section class="flex-container">
+            <h1 class="flex-container__title">Metric/Imperial Unit Conversion</h1>
+            <label for="number-input" class="flex-container__label">
+                <input type="text" name="number-input" id="number-input" class="flex-container__input">
+            </label>
+            <button id="convert-btn" class="flex-container__button">Convert</button>
+
+        </section>
+    </main>
 </body>
 </html>
