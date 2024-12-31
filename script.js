@@ -8,6 +8,10 @@ numberInputHTML.addEventListener('input', this.typing)
 
 function typing(e) {
     e.target.setAttribute('size', e.target.value.length);
+    if(!e.target.value) {
+        e.target.setAttribute("size", "1");
+    }
+    
 }
 
 
