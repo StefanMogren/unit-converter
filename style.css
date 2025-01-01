@@ -30,10 +30,15 @@
 }
 
 .grid-container {
-    padding: 2rem;
+    padding: 2rem 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     text-align: center;
+}
+
+.grid-container__container {
+    background-color: aliceblue;
 }
 
 .grid-container__subtitle {
