@@ -12,36 +12,26 @@ function typing(e) {
     
 }
 
-
+const centimeterInchHTML = document.getElementById("centimeter-inch");
+const meterFootHTML = document.getElementById("meter-foot")
 const kilometerMileHTML = document.getElementById("kilometer-mile")
 const literGallonHTML = document.getElementById("liter-gallon")
 const gramOunceHTML = document.getElementById("gram-ounce")
 const kilogramPoundHTML = document.getElementById("kilogram-pound")
 
 
-const centimeterInchHTML = document.getElementById("centimeter-inch");
-function centimeterInchConverter (value) {
-    let formula = 2.54;
-    let centToInch = Math.round((value/formula)*1000)/1000;
-    let inchToCent = value*formula;
-    
-    centimeterInchHTML.textContent = `${value} centimeters = ${centToInch} inches`;
-    centimeterInchHTML.innerHTML += "<br>";
-    centimeterInchHTML.innerText += `${value} inches = ${inchToCent} centimeters`;
-}
-centimeterInchConverter(20);
 
+function valueConverter (metric, imperial, formula, value, HTML) {
+    let metricToImperial = Math.round((value * formula)*1000)/1000;
+    let imperialToMetric = Math.round((value / formula)*1000)/1000;
+    HTML.textContent = `${value} ${metric} = ${metricToImperial} ${imperial}`;
+    HTML.innerHTML += "<br>";
+    HTML.innerText += `${value} ${imperial} = ${imperialToMetric} ${metric}`;
 
-const meterFootHTML = document.getElementById("meter-foot")
-function meterFootConverter (value) {
-    let formula = 3.281;
-    let meterToFoot = value * formula;
-    let footToMeter = Math.round((value/formula)*1000)/1000;
-    meterFootHTML.textContent = `${value} meters = ${meterToFoot} feet`;
-    meterFootHTML.innerHTML += "<br>";
-    meterFootHTML.innerText += `${value} feet = ${footToMeter} meters`;
 }
-meterFootConverter(20);
+
+valueConverter("centimeter", "inch", 2.54, 20, centimeterInchHTML)
+valueConverter("meter", "feet", 3.281, 20, meterFootHTML)
 
 /*
 convertBtn.addEventListener('click', function() {
