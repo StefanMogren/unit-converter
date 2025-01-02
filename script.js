@@ -27,16 +27,26 @@ function valueConverter (metric, imperial, formula, value, HTML) {
     HTML.textContent = `${value} ${metric} = ${metricToImperial} ${imperial}`;
     HTML.innerHTML += "<br>";
     HTML.innerText += `${value} ${imperial} = ${imperialToMetric} ${metric}`;
-
+    
 }
 
-valueConverter("centimeter", "inch", 2.54, 20, centimeterInchHTML)
-valueConverter("meter", "feet", 3.281, 20, meterFootHTML)
-
-/*
 convertBtn.addEventListener('click', function() {
-let test = myContentP.getContext("2d");
-let text = test.measureText("Hello")
-console.log(text)
-})
-*/
+    let value = numberInputHTML.value;
+    if (!isNaN(value)) {
+        valueConverter("centimeter", "inch", 2.54, value, centimeterInchHTML)
+        valueConverter("meter", "feet", 3.281, value, meterFootHTML)
+        valueConverter("kilometer", "mile", 1.609, value, kilometerMileHTML)
+        valueConverter("liters", "gallons", 3.785, value, literGallonHTML)
+        valueConverter("gram", "ounces", 0.03527, value, gramOunceHTML)
+        valueConverter("kilogram", "pounds", 2.20462, value, kilogramPoundHTML)
+    } else {
+        console.log("It isn't a number...")
+    }
+});
+
+
+
+
+
+
+
