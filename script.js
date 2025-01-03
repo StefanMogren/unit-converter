@@ -33,7 +33,7 @@ function valueConverter (metric, imperial, formula, value, HTML) {
 convertBtn.addEventListener('click', function() {
     let value = numberInputHTML.value;
     if (!isNaN(value)) {
-        valueConverter("centimeter", "inch", 2.54, value, centimeterInchHTML)
+        valueConverter("centimeter", "inches", 2.54, value, centimeterInchHTML)
         valueConverter("meter", "feet", 3.281, value, meterFootHTML)
         valueConverter("kilometer", "mile", 1.609, value, kilometerMileHTML)
         valueConverter("liters", "gallons", 3.785, value, literGallonHTML)
